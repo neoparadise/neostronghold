@@ -1,0 +1,8 @@
+[submodule "core"]
+	path = core
+	url = git@github.com:neoparadise/citadelevolve-core.git
+	branch = main
+[submodule "frontend"]
+	path = frontend
+	url = git@github.com:neoparadise/citadelevolve-frontend.git
+	branch = main
