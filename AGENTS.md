@@ -1,99 +1,169 @@
-# AI Developer Guide — Citadel Evolve Monolith
+# AI Developer Guide — neostronghold / NeoParadise
 
-This repository is a **git submodule monolith** for NeoParadise's Citadel Evolve smart home platform. It contains two submodules:
+This repository is the **monolith** for **neostronghold** — a premium open-source smart home platform by **NeoParadise** (Cape Town, South Africa).
 
-- **`core/`** — Python backend (fork of Home Assistant Core)
-- **`frontend/`** — TypeScript/Lit web frontend (fork of Home Assistant Frontend)
+---
 
-Do NOT write substantial code in this repo directly. All code lives in the submodules. This repo exists to provide a unified clone, development, and CI experience.
+## Overview
 
-## Working with Submodules
+neostronghold is an AI-powered smart home platform built on a fork of Home Assistant. This repo contains:
 
-### First-time setup
-
-```bash
-git clone --recurse-submodules git@github.com:neoparadise/citadelevolve.git
-```
-
-If already cloned without submodules:
-
-```bash
-git submodule update --init --recursive
-```
-
-### Pulling latest from submodules
-
-```bash
-git submodule update --remote --merge
-```
-
-This pulls `main` in both submodules. To update a specific submodule:
-
-```bash
-git submodule update --remote --merge core
-# or
-git submodule update --remote --merge frontend
-```
-
-### Committing submodule changes
-
-Changes to core or frontend should be **committed and pushed in their respective repos first**, then the monolith submodule pointer is updated:
-
-```bash
-# 1. Work in the submodule
-cd core
-git checkout -b my-feature
-# ... make changes ...
-git commit -m "..."
-git push origin my-feature
-
-# 2. Open a PR in citadelevolve-core, merge to main
-
-# 3. Update the monolith pointer
-cd ..
-git add core
-git commit -m "chore: update core submodule to latest main"
-git push
-```
-
-## Submodule-Specific Guidelines
-
-Refer to the AGENTS.md file in each submodule for language-specific coding standards, test commands, and architecture details:
-
-| Submodule | File | Tech Stack |
+| What | Where | Tech |
 |---|---|---|
-| **core** | [core/AGENTS.md](core/AGENTS.md) | Python 3.14, asyncio, aiohttp, SQLAlchemy |
-| **frontend** | [frontend/AGENTS.md](frontend/AGENTS.md) | TypeScript, Lit Web Components, Rspack |
+| 🌐 **Brand website / pitch deck** | `web/` | Next.js 16, Tailwind v4, Three.js, Framer Motion |
+| 📚 **Strategy & business docs** | `docs/` | Markdown — business plan, funding strategy, GTM plans |
+| 🐍 **Home Assistant fork (backend)** | `core/` | Python 3.14, asyncio, SQLAlchemy (git submodule) |
+| ⚛️ **Home Assistant fork (frontend)** | `frontend/` | TypeScript, Lit Web Components (git submodule) |
 
-### Core Key Commands
+**Do NOT write substantial code in the submodules directly from this repo.** Changes to `core/` and `frontend/` should be committed in their own repos first, then the submodule pointer is updated here.
 
-```bash
-cd core
-script/setup              # One-time: install deps
-uv run pytest             # Run tests
-script/develop            # Start dev instance
-```
+---
 
-### Frontend Key Commands
+## Quick Start — Website
 
 ```bash
-cd frontend
-script/setup              # One-time: install deps
-yarn lint                 # ESLint + Prettier + TypeScript + Lit
-yarn test                 # Vitest
-script/develop            # Start dev server
+cd web
+pnpm install
+pnpm dev
+# → http://localhost:3000
 ```
 
-## Testing
+### Build
 
-There are no tests at the monolith level. All tests live in the submodules. Run them with the commands above.
+```bash
+cd web
+pnpm build
+pnpm start
+```
 
-## Pull Requests
+---
 
-When a PR touches both submodules (e.g., a backend API change + frontend UI), create separate PRs in each submodule repo and link them cross-referencing the PR numbers.
+## Repository Structure
+
+```
+neostronghold/
+├── web/                          # 🌐 Brand website (Next.js 16)
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── page.tsx          # Main landing page (20 sections)
+│   │   │   ├── contact/page.tsx  # Contact form with Web3Forms
+│   │   │   └── globals.css       # Cosmic theme, glass utilities
+│   │   ├── components/
+│   │   │   ├── sections/         # 20 pitch deck sections
+│   │   │   ├── ui/               # shadcn-themed primitives
+│   │   │   ├── layout/           # Nav, Footer
+│   │   │   ├── effects/          # Starfield, scroll-reveal, 3D globe
+│   │   │   └── contact-provider.tsx  # Contact dialog context
+│   │   └── lib/
+│   │       ├── constants.ts      # All site data, product info, copy
+│   │       ├── fonts.ts          # Space Grotesk + Inter
+│   │       └── utils.ts          # cn() helper
+│   └── public/                   # SVG logo, icons, favicon, manifest
+│
+├── docs/                         # 📚 Strategy & business documents
+│   ├── BUSINESS_PLAN.md          # Full 15-section business plan
+│   ├── PATH_TO_1B.md             # Roadmap from zero to $1B exit
+│   ├── HARDWARE_STRATEGY.md      # Pulse/Nexus/Bastion hardware tiers
+│   ├── AI_PRICING_MODEL.md       # 4-tier subscription + marketplace
+│   ├── SOLAR_PARTNERSHIP.md      # Victron/Sunsynk/Rubicon pitch
+│   ├── ELON_X_STRATEGY.md        # X demo playbook for @elonmusk
+│   ├── YC_APPLICATION.md         # Pre-filled Y Combinator app
+│   ├── ARCHITECT_CHANNEL.md      # CPD course, trade program
+│   ├── DIASPORA_GTM.md           # UK/Aus/Portugal/Dubai expansion
+│   ├── MARK2_WEBSITE_SPEC.md     # Full website spec (1,044 lines)
+│   └── promotions/
+│       └── prototype_messages.md # Outreach message templates
+│
+├── core/                         # 🐍 Python backend (submodule)
+├── frontend/                     # ⚛️ TypeScript frontend (submodule)
+├── scripts/
+│   └── convert_logo.py           # One-time: PNG → SVG logo converter
+└── README.md                     # Project readme with emojis
+```
+
+---
+
+## Website Sections (20 total)
+
+The landing page is a scrollable pitch deck with these sections in order:
+
+| # | Section | Key Content |
+|---|---|---|
+| 1 | **Hero** | Three.js 3D globe, rotating text, role CTAs |
+| 2 | **Problem** | 4 pain point cards |
+| 3 | **How It Works** | 3-step journey |
+| 4 | **Hardware Showcase** | Pulse (Core) + Nexus (Pro) with CSS device renders |
+| 5 | **Agent Hub** | tmux-like multi-agent workspace |
+| 6 | **AI Agent** | WhatsApp chat mockup demo |
+| 7 | **Features** | 6 product feature cards |
+| 8 | **Tesla Integration** | Fleet API features, Powerwall |
+| 9 | **Agent Marketplace** | 6 category cards with agent counts |
+| 10 | **For Architects** | CPD course, trade partner benefits |
+| 11 | **SA Diaspora** | 4-country market expansion cards |
+| 12 | **Competition** | 2×2 matrix (Open vs Closed × Premium vs DIY) |
+| 13 | **Market** | 6 stat cards with market data |
+| 14 | **Pricing** | 3 tiers (Plus/Pro/Installer) + quotation option |
+| 15 | **Open Source** | Philosophy, GitHub CTA |
+| 16 | **Roadmap** | Multi-step interactive stepper (4 phases) |
+| 17 | **Alpha Community** | Neighbor testimonials |
+| 18 | **Team** | Annekin (CEO) + Corrie (Installation) |
+| 19 | **Investors** | 6 key metrics + deck request CTA |
+| 20 | **CTA / Contact** | Email capture with Web3Forms integration |
+
+---
+
+## Design System
+
+| Token | Value |
+|---|---|
+| **Theme** | Cosmic dark, glassmorphism |
+| **Primary** | HSL 196 94% 48% (electric cyan) |
+| **Secondary** | HSL 263 70% 50% (nebula purple) |
+| **Background** | HSL 228 30% 6% (deep space) |
+| **Glass** | `blur(20px) saturate(180%) brightness(110%)` |
+| **Fonts** | Space Grotesk (headings), Inter (body), JetBrains Mono (code) |
+| **Radius** | 1rem (16px) — consistent across all cards |
+
+---
+
+## Key Scripts
+
+```bash
+cd web
+pnpm dev          # Start dev server on :3000
+pnpm build        # Production build
+pnpm lint         # ESLint check
+```
+
+---
+
+## Submodule Usage
+
+The `core/` and `frontend/` directories are git submodules pointing to the Home Assistant forks. They are maintained separately:
+
+```bash
+# Pull latest from both submodules
+git submodule update --remote --merge
+
+# Update a specific submodule
+git submodule update --remote --merge core
+git submodule update --remote --merge frontend
+
+# Commit submodule pointer change
+git add core frontend
+git commit -m "chore: update submodules to latest main"
+```
+
+---
+
+## Environment Variables
+
+| Variable | Required For | Where to Set |
+|---|---|---|
+| `NEXT_PUBLIC_WEB3FORMS_KEY` | Contact form email sending | `.env.local` in `web/` |
+
+---
 
 ## Deployment
 
-Deployment is handled per-submodule:
-- **core** — Docker image (see `core/Dockerfile`)
-- **frontend** — Python wheel published to PyPI (see `frontend/pyproject.toml`), bundled with core for user-facing delivery
+The website is deployed on **Vercel** (linked to GitHub — push to `main` auto-deploys to neostronghold.com).
