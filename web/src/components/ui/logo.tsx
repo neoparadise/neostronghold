@@ -3,7 +3,7 @@ export function Logo({ className }: { className?: string }) {
     <svg
       className={className}
       viewBox="0 0 1024 1024"
-      fill="currentColor"
+      fill="white"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g transform="translate(0,1024) scale(1,-1)">

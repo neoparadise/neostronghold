@@ -9,7 +9,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <a href="#hero" className="flex items-center gap-2.5 mb-4">
               <Logo className="h-8 w-8 text-primary" />
-              <span className="font-heading text-lg font-bold tracking-tight">
+              <span className="font-heading text-lg font-bold tracking-tight text-gradient">
                 neostronghold
               </span>
             </a>
