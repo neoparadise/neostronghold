@@ -17,6 +17,7 @@ export const NAV_ITEMS = [
   { label: "Marketplace", href: "#marketplace" },
   { label: "Tesla", href: "#tesla" },
   { label: "Pricing", href: "#pricing" },
+  { label: "Contact", href: "/contact" },
   { label: "Team", href: "#team" },
 ] as const
 
