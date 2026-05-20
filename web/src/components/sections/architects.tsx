@@ -69,7 +69,7 @@ export function Architects() {
               <p className="text-sm text-muted-foreground mb-6">
                 {ARCHITECT_PROGRAM.cpdDescription}
               </p>
-              <Button variant="glow" size="lg" onClick={openContact}>
+              <Button variant="glow" size="lg" onClick={() => openContact({ interest: "Partnership" })}>
                 Book a Lunch &amp; Learn
               </Button>
             </div>

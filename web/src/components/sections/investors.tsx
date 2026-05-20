@@ -58,7 +58,7 @@ export function Investors() {
               assessment. Preparing for Y Combinator Winter 2027.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="glow" size="lg" onClick={openContact}>
+              <Button variant="glow" size="lg" onClick={() => openContact({ interest: "Investment" })}>
                 Request Investor Deck
               </Button>
               <Button variant="outline" size="lg" asChild>
