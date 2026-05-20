@@ -10,12 +10,10 @@ export function Competition() {
         <ScrollReveal>
           <div className="text-center mb-16">
             <h2 className="font-heading text-4xl sm:text-5xl font-bold tracking-tight mb-4">
-              The smart home landscape{" "}
-              <span className="text-gradient">reimagined</span>
+              <span className="text-gradient">No one</span> does both.
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              Every competitor forces a trade-off. We&apos;re the first to bridge
-              premium quality with open-source freedom.
+              Premium or open-source? Until now, you had to choose.
             </p>
           </div>
         </ScrollReveal>

@@ -20,7 +20,7 @@ export function Team() {
           </div>
         </ScrollReveal>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 max-w-2xl mx-auto">
           {TEAM_MEMBERS.map((member, i) => (
             <ScrollReveal key={member.name} delay={i * 0.12}>
               <div className="group rounded-[var(--radius)] border border-border/50 bg-card p-6 text-center hover:border-primary/30 transition-colors duration-300">

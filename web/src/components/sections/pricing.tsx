@@ -61,13 +61,13 @@ export function Pricing() {
                 </ul>
 
                 <Button
-                  variant={tier.highlighted ? "glow" : "outline"}
+                  variant={tier.highlighted ? "glow" : tier.custom ? "outline" : "outline"}
                   size="lg"
-                  className="w-full"
+                  className={`w-full ${tier.custom ? "border-primary/50" : ""}`}
                   asChild
                 >
                   <a href="#cta">
-                    {tier.highlighted ? "Get Started" : "Learn More"}
+                    {tier.highlighted ? "Get Started" : tier.custom ? "Contact Us" : "Learn More"}
                   </a>
                 </Button>
               </div>

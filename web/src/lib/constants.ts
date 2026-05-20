@@ -366,20 +366,6 @@ export const FEATURES = [
 
 export const PRICING_TIERS = [
   {
-    name: "Free",
-    price: "R0",
-    description: "For tinkerers and early adopters.",
-    features: [
-      "3 basic AI agents",
-      "Local-only AI processing",
-      "Community agent library (browse)",
-      "App + web dashboard",
-      "Community support",
-    ],
-    highlighted: false,
-    ai: false,
-  },
-  {
     name: "Plus",
     price: "R189/mo",
     description: "For daily smart home users.",
@@ -412,19 +398,19 @@ export const PRICING_TIERS = [
   },
   {
     name: "Installer",
-    price: "R999/mo",
+    price: "Custom",
     description: "For professionals managing client homes.",
     features: [
-      "Everything in Pro",
-      "Multi-client dashboard",
-      "White-label option",
+      "Multi-client fleet dashboard",
+      "White-label branding",
       "Predictive maintenance AI",
-      "API access",
+      "API access + webhooks",
       "Client billing integration",
       "Dedicated account manager",
     ],
     highlighted: false,
     ai: true,
+    custom: true,
   },
 ]
 
@@ -510,22 +496,15 @@ export const TEAM_MEMBERS = [
     name: "Annekin Meyburgh",
     role: "Founder & CEO",
     description:
-      "Full-stack developer and smart home enthusiast. Has been building and managing his own smart home for years. Deep expertise in the Home Assistant ecosystem and vision to bring premium smart homes to every South African.",
+      "Full-stack developer and smart home enthusiast. Building and managing his own smart home for years. Deep expertise in the Home Assistant ecosystem and vision to bring premium smart homes to every South African.",
     initials: "AM",
   },
   {
-    name: "Dad",
+    name: "Corrie Meyburgh",
     role: "Head of Installation",
     description:
-      "Qualified electrician with 30+ years of experience in home building and maintenance. Co-manages the family smart home. Certified to issue COCs and lead installation projects.",
-    initials: "DM",
-  },
-  {
-    name: "Brother",
-    role: "Field Technician",
-    description:
-      "Qualified tradesman specialising in installation and customer support. Smart home enthusiast and hands-on technical problem solver.",
-    initials: "BM",
+      "Smart home enthusiast with deep electrical expertise. Co-manages the family smart home alongside Annekin. Hands-on lead for every installation project.",
+    initials: "CM",
   },
 ]
 

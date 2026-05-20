@@ -4,20 +4,20 @@ import { ScrollReveal } from "@/components/effects/scroll-reveal"
 import { FEATURES } from "@/lib/constants"
 import {
   Cpu,
-  Radio,
+  Layout,
+  Car,
+  Store,
   Sun,
-  Bot,
   Code2,
-  Shield,
 } from "lucide-react"
 
 const iconMap: Record<string, React.ElementType> = {
   Cpu,
-  Radio,
+  Layout,
+  Car,
+  Store,
   Sun,
-  Bot,
   Code2,
-  Shield,
 }
 
 export function Features() {
