@@ -43,13 +43,9 @@ export function Features() {
             return (
               <ScrollReveal key={feature.title} delay={i * 0.08}>
                 <div className="group relative overflow-hidden rounded-[var(--radius)] border border-border/50 bg-card p-8 transition-all duration-500 hover:border-primary/30 hover:-translate-y-1">
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
-                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative z-10">
-                    <div
-                      className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${feature.gradient}`}
-                    >
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/70">
                       {Icon && <Icon size={24} className="text-white" />}
                     </div>
                     <h3 className="font-heading text-xl font-semibold mb-2">
