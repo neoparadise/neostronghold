@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { inter, spaceGrotesk, jetbrainsMono } from "@/lib/fonts"
+import { ContactProvider } from "@/components/contact-provider"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -40,7 +41,7 @@ export default function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} scroll-smooth`}
     >
       <body className="min-h-screen bg-background text-foreground antialiased">
-        {children}
+        <ContactProvider>{children}</ContactProvider>
       </body>
     </html>
   )

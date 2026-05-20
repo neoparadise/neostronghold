@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
 import { Logo } from "@/components/ui/logo"
 import { Menu, X } from "lucide-react"
+import { useContact } from "@/components/contact-provider"
 
 const NAV_ITEMS = [
   { label: "Hardware", href: "#hardware" },
@@ -17,6 +18,7 @@ const NAV_ITEMS = [
 export function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const { open: openContact } = useContact()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -60,12 +62,12 @@ export function Nav() {
           </div>
 
           <div className="flex items-center gap-3">
-            <a
-              href="#cta"
+            <button
+              onClick={openContact}
               className="hidden sm:inline-flex items-center justify-center h-9 px-5 text-sm font-medium rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
             >
               Get in Touch
-            </a>
+            </button>
             <button
               onClick={() => setOpen(!open)}
               className="md:hidden flex h-10 w-10 items-center justify-center rounded-xl bg-muted/50 text-foreground touch-action-manipulation active:scale-95 transition-transform"
@@ -96,13 +98,12 @@ export function Nav() {
                 </a>
               ))}
               <div className="mt-4 pt-4 border-t border-border/30">
-                <a
-                  href="#cta"
-                  onClick={() => setOpen(false)}
-                  className="flex items-center justify-center h-12 text-base font-medium rounded-full bg-primary text-primary-foreground"
+                <button
+                  onClick={() => { setOpen(false); openContact() }}
+                  className="flex items-center justify-center h-12 text-base font-medium rounded-full bg-primary text-primary-foreground w-full"
                 >
                   Get in Touch
-                </a>
+                </button>
               </div>
             </div>
           </div>

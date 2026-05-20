@@ -27,8 +27,8 @@ export function AIAgent() {
 
         <div className="grid gap-8 lg:grid-cols-2 items-center">
           <ScrollReveal direction="left">
-            <div className="relative">
-              <div className="rounded-2xl border border-border/50 bg-card p-6 shadow-xl">
+            <div className="relative overflow-hidden max-w-full">
+              <div className="rounded-2xl border border-border/50 bg-card p-4 sm:p-6 shadow-xl">
                 <div className="flex items-center gap-3 mb-4 pb-4 border-b border-border/50">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10">
                     <MessageCircle size={20} className="text-accent" />
@@ -67,7 +67,7 @@ export function AIAgent() {
                       className={`flex ${msg.from === "you" ? "justify-end" : "justify-start"}`}
                     >
                       <div
-                        className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm ${
+                        className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm break-words ${
                           msg.from === "you"
                             ? "bg-primary text-primary-foreground rounded-br-sm"
                             : "bg-muted text-foreground rounded-bl-sm"

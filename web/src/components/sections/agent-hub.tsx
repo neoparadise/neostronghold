@@ -59,7 +59,7 @@ export function AgentHub() {
               </div>
 
               <div className="p-6 space-y-4">
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {AGENT_EXAMPLES.slice(0, 4).map((agent, i) => {
                     const Icon = iconMap[agent.icon] as React.ComponentType<{ size?: number; className?: string }> | undefined
                     return (
