@@ -5,7 +5,7 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "neostronghold — Intelligent homes, open to everyone.",
   description:
-    "Premium smart home platform built on open-source technology. AI-powered home automation for South Africa, by South Africa.",
+    "Your home's AI operating system. Open-source, local-first, and built for the way you live. AI agents for energy, security, comfort, and Tesla integration.",
   keywords: [
     "smart home",
     "home automation",
@@ -16,11 +16,13 @@ export const metadata: Metadata = {
     "AI agent",
     "solar integration",
     "load shedding",
+    "Tesla Powerwall",
+    "smart home hub",
   ],
   openGraph: {
     title: "neostronghold — Intelligent homes, open to everyone.",
     description:
-      "Premium smart home platform built on open-source technology. AI-powered home automation for South Africa.",
+      "Your home's AI operating system. Open-source, local-first, and built for the way you live.",
     siteName: "neostronghold",
     locale: "en_ZA",
     type: "website",
