@@ -2,10 +2,12 @@
 
 import { ScrollReveal } from "@/components/effects/scroll-reveal"
 import { Button } from "@/components/ui/button"
+import { useContact } from "@/components/contact-provider"
 import { DIASPORA_MARKETS } from "@/lib/constants"
 import { Globe, MapPin, Shield, Users, ArrowRight } from "lucide-react"
 
 export function Diaspora() {
+  const { open: openContact } = useContact()
   return (
     <section id="diaspora" className="relative py-24 sm:py-32 bg-cosmic-surface/50">
       <div className="mx-auto max-w-7xl px-6">
@@ -56,9 +58,9 @@ export function Diaspora() {
                   </div>
                 </div>
 
-                <Button variant="link" size="sm" className="px-0 text-xs h-auto" asChild>
-                  <a href="#cta">Learn more <ArrowRight size={12} className="ml-1" /></a>
-                </Button>
+                <button onClick={openContact} className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors">
+                  Learn more <ArrowRight size={12} />
+                </button>
               </div>
             </ScrollReveal>
           ))}
@@ -69,8 +71,8 @@ export function Diaspora() {
             <p className="text-sm text-muted-foreground mb-4 max-w-xl mx-auto">
               SA expats in the UK pay 15-30% premiums for homes with SA-grade security integration. We bring that standard — anywhere.
             </p>
-            <Button variant="outline" size="lg" asChild>
-              <a href="#cta">International enquiries</a>
+            <Button variant="outline" size="lg" onClick={openContact}>
+              International enquiries
             </Button>
           </div>
         </ScrollReveal>

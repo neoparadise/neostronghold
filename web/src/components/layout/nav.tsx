@@ -64,7 +64,7 @@ export function Nav() {
           <div className="flex items-center gap-3">
             <button
               onClick={openContact}
-              className="hidden sm:inline-flex items-center justify-center h-9 px-5 text-sm font-medium rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+              className="hidden sm:inline-flex items-center justify-center h-9 px-5 text-sm font-medium rounded-full text-white bg-gradient-to-r from-primary via-secondary to-accent bg-[length:200%_200%] animate-gradient-rotate shadow-[0_0_20px_hsl(var(--primary)/0.4)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.6)] transition-all duration-300"
             >
               Get in Touch
             </button>
@@ -100,7 +100,7 @@ export function Nav() {
               <div className="mt-4 pt-4 border-t border-border/30">
                 <button
                   onClick={() => { setOpen(false); openContact() }}
-                  className="flex items-center justify-center h-12 text-base font-medium rounded-full bg-primary text-primary-foreground w-full"
+                  className="flex items-center justify-center h-12 text-base font-medium rounded-full text-white bg-gradient-to-r from-primary via-secondary to-accent bg-[length:200%_200%] animate-gradient-rotate shadow-[0_0_20px_hsl(var(--primary)/0.4)] w-full"
                 >
                   Get in Touch
                 </button>

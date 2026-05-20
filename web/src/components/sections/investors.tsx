@@ -2,10 +2,12 @@
 
 import { ScrollReveal } from "@/components/effects/scroll-reveal"
 import { Button } from "@/components/ui/button"
+import { useContact } from "@/components/contact-provider"
 import { INVESTOR_HIGHLIGHTS } from "@/lib/constants"
 import { TrendingUp, Target, DollarSign, Users, Cpu, BarChart3 } from "lucide-react"
 
 export function Investors() {
+  const { open: openContact } = useContact()
   return (
     <section id="investors" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6">
@@ -56,10 +58,8 @@ export function Investors() {
               assessment. Preparing for Y Combinator Winter 2027.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="glow" size="lg" asChild>
-                <a href="mailto:hello@neostronghold.co.za">
-                  Request Investor Deck
-                </a>
+              <Button variant="glow" size="lg" onClick={openContact}>
+                Request Investor Deck
               </Button>
               <Button variant="outline" size="lg" asChild>
                 <a

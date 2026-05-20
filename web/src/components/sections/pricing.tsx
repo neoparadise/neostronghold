@@ -3,10 +3,12 @@
 import { ScrollReveal } from "@/components/effects/scroll-reveal"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { useContact } from "@/components/contact-provider"
 import { PRICING_TIERS } from "@/lib/constants"
 import { Check } from "lucide-react"
 
 export function Pricing() {
+  const { open: openContact } = useContact()
   return (
     <section id="pricing" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6">
@@ -64,11 +66,9 @@ export function Pricing() {
                   variant={tier.highlighted ? "glow" : tier.custom ? "outline" : "outline"}
                   size="lg"
                   className={`w-full ${tier.custom ? "border-primary/50" : ""}`}
-                  asChild
+                  onClick={openContact}
                 >
-                  <a href="#cta">
                     {tier.highlighted ? "Get Started" : tier.custom ? "Contact Us" : "Learn More"}
-                  </a>
                 </Button>
               </div>
             </ScrollReveal>

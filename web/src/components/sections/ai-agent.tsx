@@ -2,9 +2,11 @@
 
 import { ScrollReveal } from "@/components/effects/scroll-reveal"
 import { Button } from "@/components/ui/button"
+import { useContact } from "@/components/contact-provider"
 import { Bot, MessageCircle, Zap, Shield } from "lucide-react"
 
 export function AIAgent() {
+  const { open: openContact } = useContact()
   return (
     <section id="ai-agent" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6">
@@ -131,8 +133,8 @@ export function AIAgent() {
                 </div>
               ))}
 
-              <Button variant="outline" size="lg" className="w-full" asChild>
-                <a href="#cta">Try the AI Agent</a>
+              <Button variant="outline" size="lg" className="w-full sm:w-auto" onClick={openContact}>
+                Try the AI Agent
               </Button>
             </div>
           </ScrollReveal>

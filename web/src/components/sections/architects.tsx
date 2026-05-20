@@ -2,6 +2,7 @@
 
 import { ScrollReveal } from "@/components/effects/scroll-reveal"
 import { Button } from "@/components/ui/button"
+import { useContact } from "@/components/contact-provider"
 import { ARCHITECT_PROGRAM } from "@/lib/constants"
 import { GraduationCap, FileText, Building2, Users, Ruler, Handshake } from "lucide-react"
 
@@ -15,6 +16,7 @@ const benefitIcons: Record<string, React.ElementType> = {
 }
 
 export function Architects() {
+  const { open: openContact } = useContact()
   return (
     <section id="architects" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6">
@@ -67,8 +69,8 @@ export function Architects() {
               <p className="text-sm text-muted-foreground mb-6">
                 {ARCHITECT_PROGRAM.cpdDescription}
               </p>
-              <Button variant="glow" size="lg" asChild>
-                <a href="#cta">Book a Lunch & Learn</a>
+              <Button variant="glow" size="lg" onClick={openContact}>
+                Book a Lunch &amp; Learn
               </Button>
             </div>
           </ScrollReveal>
