@@ -13,7 +13,8 @@ neostronghold is an AI-powered smart home platform built on a fork of Home Assis
 | 🌐 **Brand website / pitch deck** | `web/` | Next.js 16, Tailwind v4, Three.js, Framer Motion |
 | 📚 **Strategy & business docs** | `docs/` | Markdown — business plan, funding strategy, GTM plans |
 | 🐍 **Home Assistant fork (backend)** | `core/` | Python 3.14, asyncio, SQLAlchemy (git submodule) |
-| ⚛️ **Home Assistant fork (frontend)** | `frontend/` | TypeScript, Lit Web Components (git submodule) |
+| 📖 **Reference implementations** | `inspiration/` | HA frontend, openclaw, opencode (git submodules) |
+| 🚧 **Main app (coming soon)** | `app/` | React + shadcn + Expo — see `docs/INSPIRATION.md` |
 
 **Do NOT write substantial code in the submodules directly from this repo.** Changes to `core/` and `frontend/` should be committed in their own repos first, then the submodule pointer is updated here.
 
@@ -75,7 +76,11 @@ neostronghold/
 │       └── prototype_messages.md # Outreach message templates
 │
 ├── core/                         # 🐍 Python backend (submodule)
-├── frontend/                     # ⚛️ TypeScript frontend (submodule)
+├── inspiration/                  # 📖 Reference implementations (submodules)
+│   ├── frontend/                 # Home Assistant frontend (Lit)
+│   ├── openclaw/                 # Multi-agent orchestration
+│   └── opencode/                 # AI agent interface & tool-use
+├── app/                          # 🚧 Main app (coming soon)
 ├── scripts/
 │   └── convert_logo.py           # One-time: PNG → SVG logo converter
 └── README.md                     # Project readme with emojis
@@ -139,18 +144,20 @@ pnpm lint         # ESLint check
 
 ## Submodule Usage
 
-The `core/` and `frontend/` directories are git submodules pointing to the Home Assistant forks. They are maintained separately:
+The `core/` and `inspiration/` directories contain git submodules. They are maintained separately:
 
 ```bash
-# Pull latest from both submodules
+# Pull latest from all submodules
 git submodule update --remote --merge
 
 # Update a specific submodule
 git submodule update --remote --merge core
-git submodule update --remote --merge frontend
+git submodule update --remote --merge inspiration/frontend
+git submodule update --remote --merge inspiration/openclaw
+git submodule update --remote --merge inspiration/opencode
 
 # Commit submodule pointer change
-git add core frontend
+git add core inspiration
 git commit -m "chore: update submodules to latest main"
 ```
 

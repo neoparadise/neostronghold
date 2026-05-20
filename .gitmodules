@@ -2,7 +2,12 @@
 	path = core
 	url = git@github.com:neoparadise/citadelevolve-core.git
 	branch = main
-[submodule "frontend"]
-	path = frontend
+[submodule "inspiration/frontend"]
+	path = inspiration/frontend
 	url = git@github.com:neoparadise/citadelevolve-frontend.git
-	branch = main
+[submodule "inspiration/openclaw"]
+	path = inspiration/openclaw
+	url = https://github.com/openclaw/openclaw.git
+[submodule "inspiration/opencode"]
+	path = inspiration/opencode
+	url = https://github.com/opencode-ai/opencode.git
