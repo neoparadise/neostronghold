@@ -1,10 +1,11 @@
 "use client"
 
-import { useState, FormEvent } from "react"
+import { useState, FormEvent, useEffect, useRef } from "react"
 import { X, Send, Check, Loader2 } from "lucide-react"
-import { useContact } from "@/components/contact-provider"
 
 const ACCESS_KEY = "b5681560-2858-4c77-be19-2ef14e9d6c39"
+const LS_EMAIL = "ns_email"
+const LS_PHONE = "ns_phone"
 
 interface ContactDialogProps {
   open: boolean
@@ -16,6 +17,20 @@ export function ContactDialog({ open, prefill, onClose }: ContactDialogProps) {
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
   const [error, setError] = useState("")
+  const formRef = useRef<HTMLFormElement>(null)
+
+  // Pre-fill from localStorage when dialog opens
+  useEffect(() => {
+    if (!open) return
+    const email = localStorage.getItem(LS_EMAIL) || ""
+    const phone = localStorage.getItem(LS_PHONE) || ""
+    if (formRef.current) {
+      const emailInput = formRef.current.elements.namedItem("email") as HTMLInputElement
+      const phoneInput = formRef.current.elements.namedItem("phone") as HTMLInputElement
+      if (emailInput) emailInput.value = email
+      if (phoneInput) phoneInput.value = phone
+    }
+  }, [open])
 
   if (!open) return null
 
@@ -35,6 +50,11 @@ export function ContactDialog({ open, prefill, onClose }: ContactDialogProps) {
       })
       const data = await res.json()
       if (data.success) {
+        // Remember for next time
+        const email = formData.get("email") as string
+        const phone = formData.get("phone") as string
+        if (email) localStorage.setItem(LS_EMAIL, email)
+        if (phone) localStorage.setItem(LS_PHONE, phone)
         setSent(true)
       } else {
         setError(data.message || "Something went wrong.")
@@ -81,7 +101,7 @@ export function ContactDialog({ open, prefill, onClose }: ContactDialogProps) {
             </button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="p-6 space-y-4">
+          <form ref={formRef} onSubmit={handleSubmit} className="p-6 space-y-4">
             {prefill?.interest && (
               <input type="hidden" name="interest" value={prefill.interest} />
             )}
