@@ -58,7 +58,7 @@ export function Diaspora() {
                   </div>
                 </div>
 
-                <button onClick={openContact} className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors">
+                <button onClick={() => openContact()} className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors">
                   Learn more <ArrowRight size={12} />
                 </button>
               </div>
@@ -71,7 +71,7 @@ export function Diaspora() {
             <p className="text-sm text-muted-foreground mb-4 max-w-xl mx-auto">
               SA expats in the UK pay 15-30% premiums for homes with SA-grade security integration. We bring that standard — anywhere.
             </p>
-            <Button variant="outline" size="lg" onClick={openContact}>
+            <Button variant="outline" size="lg" onClick={() => openContact()}>
               International enquiries
             </Button>
           </div>

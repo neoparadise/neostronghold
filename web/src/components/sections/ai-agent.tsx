@@ -133,7 +133,7 @@ export function AIAgent() {
                 </div>
               ))}
 
-              <Button variant="outline" size="lg" className="w-full sm:w-auto" onClick={openContact}>
+              <Button variant="outline" size="lg" className="w-full sm:w-auto" onClick={() => openContact()}>
                 Try the AI Agent
               </Button>
             </div>

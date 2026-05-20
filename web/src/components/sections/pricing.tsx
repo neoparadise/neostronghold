@@ -66,7 +66,7 @@ export function Pricing() {
                   variant={tier.highlighted ? "glow" : tier.custom ? "outline" : "outline"}
                   size="lg"
                   className={`w-full ${tier.custom ? "border-primary/50" : ""}`}
-                  onClick={openContact}
+                  onClick={() => openContact()}
                 >
                     {tier.highlighted ? "Get Started" : tier.custom ? "Contact Us" : "Learn More"}
                 </Button>

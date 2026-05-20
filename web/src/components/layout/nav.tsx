@@ -63,7 +63,7 @@ export function Nav() {
 
           <div className="flex items-center gap-3">
             <button
-              onClick={openContact}
+              onClick={() => openContact()}
               className="hidden sm:inline-flex items-center justify-center h-9 px-5 text-sm font-medium rounded-full text-white bg-gradient-to-r from-primary via-secondary to-accent bg-[length:200%_200%] animate-gradient-rotate shadow-[0_0_20px_hsl(var(--primary)/0.4)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.6)] transition-all duration-300"
             >
               Get in Touch

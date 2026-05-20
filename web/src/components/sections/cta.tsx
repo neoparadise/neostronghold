@@ -28,7 +28,7 @@ export function CTA() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button variant="glow" size="xl" onClick={openContact}>
+                <Button variant="glow" size="xl" onClick={() => openContact()}>
                   Get in Touch
                   <ArrowRight className="ml-1" size={18} />
                 </Button>
@@ -46,7 +46,7 @@ export function CTA() {
 
               <p className="text-xs text-muted-foreground mt-6">
                 Investors, partners, and early adopters —{" "}
-                <button onClick={openContact} className="text-primary hover:underline">
+                <button onClick={() => openContact()} className="text-primary hover:underline">
                   contact us
                 </button>
               </p>
