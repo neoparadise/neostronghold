@@ -20,6 +20,15 @@ export const metadata: Metadata = {
     "Tesla Powerwall",
     "smart home hub",
   ],
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: { url: "/icon-180x180.png", sizes: "180x180" },
+  },
+  manifest: "/manifest.json",
   openGraph: {
     title: "neostronghold — Intelligent homes, open to everyone.",
     description:

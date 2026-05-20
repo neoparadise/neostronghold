@@ -44,7 +44,7 @@ export function Nav() {
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
           <a href="#hero" className="flex items-center gap-2.5 group">
             <Logo className="h-8 w-8" />
-            <span className="font-heading text-lg font-bold tracking-tight hidden sm:inline text-gradient">
+            <span className="font-heading text-base sm:text-lg font-bold tracking-tight text-gradient">
               neostronghold
             </span>
           </a>

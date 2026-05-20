@@ -8,6 +8,7 @@ interface ScrollRevealProps {
   className?: string
   delay?: number
   direction?: "up" | "down" | "left" | "right"
+  fast?: boolean
 }
 
 const directionVariants = {
@@ -22,6 +23,7 @@ export function ScrollReveal({
   className,
   delay = 0,
   direction = "up",
+  fast = false,
 }: ScrollRevealProps) {
   const ref = useRef(null)
 
@@ -37,9 +39,9 @@ export function ScrollReveal({
         x: 0,
         y: 0,
       }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "0px 0px -50px 0px" }}
       transition={{
-        duration: 0.7,
+        duration: fast ? 0.4 : 0.6,
         delay,
         ease: [0.25, 0.1, 0.25, 1],
       }}
