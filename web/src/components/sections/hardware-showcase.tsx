@@ -40,14 +40,16 @@ export function HardwareShowcase() {
                       : "border border-border/50 bg-card"
                   }`}
                 >
-                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-start justify-between mb-6">
                     <div>
                       <div className="flex items-center gap-3 mb-2">
-                        <h3 className="font-heading text-2xl font-bold">
-                          {tier.name}
+                        <span className="text-xs font-medium text-primary/60 uppercase tracking-widest">{tier.name}</span>
+                        <h3 className="font-heading text-xl sm:text-2xl font-bold">
+                          {tier.brand}
                         </h3>
+                        <p className="font-heading text-lg font-semibold text-gradient sm:hidden">{tier.name}</p>
                         <span
-                          className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
+                          className={`hidden sm:inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
                             tier.isPro
                               ? "bg-gradient-to-r from-primary/20 to-secondary/20 text-primary border border-primary/30"
                               : "bg-muted text-muted-foreground border border-border/50"

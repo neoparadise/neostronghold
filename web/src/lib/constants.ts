@@ -87,13 +87,38 @@ export const HOW_IT_WORKS = [
   },
 ]
 
+export const PRODUCT_CODENAMES: Record<string, string> = {
+  Core: "Pulse",
+  Pro: "Nexus",
+  ProPlus: "Bastion",
+  Helios: "Energy Manager",
+  Aegis: "Security Guard",
+  Oberon: "Concierge",
+  Zephyr: "Climate Master",
+  Nereus: "Water Keeper",
+  Transit: "Vehicle Integrator",
+}
+
+export const PRODUCT_ONE_LINERS: Record<string, string> = {
+  Pulse: "The heartbeat of your smart home.",
+  Nexus: "Every protocol. Every agent. One device.",
+  Bastion: "Fortress-grade. Where the grid isn't.",
+  Helios: "Your energy. Your terms. Your savings.",
+  Aegis: "The shield you don't see. Until you need it.",
+  Oberon: "Your home, fully staffed.",
+  Zephyr: "Every room, at the perfect temperature.",
+  Nereus: "Silent watcher of every pipe and pool.",
+  Transit: "Your garage knows before you do.",
+}
+
 export const HARDWARE_TIERS = [
   {
     name: "Core",
+    brand: "Pulse",
     tagline: "Cloud-managed simplicity",
     price: "R1,499",
     description: "The smart home router. Connects everything, managed through our cloud. Perfect for everyday smart living.",
-    badge: "Managed",
+    badge: "Pulse",
     specs: [
       "Dual-band WiFi 6",
       "Zigbee + Thread + Matter",
@@ -107,10 +132,11 @@ export const HARDWARE_TIERS = [
   },
   {
     name: "Pro",
+    brand: "Nexus",
     tagline: "Local AI sovereignty",
     price: "R5,999",
     description: "Your home's AI brain. Runs every agent locally. Zero cloud dependency. Modular, upgradable, yours.",
-    badge: "Roadster",
+    badge: "Nexus",
     specs: [
       "CNC aluminum + translucent glass design",
       "Local AI inference (8GB+ VRAM capable)",
@@ -129,37 +155,43 @@ export const HARDWARE_TIERS = [
 export const AGENT_EXAMPLES = [
   {
     name: "Energy Manager",
-    description: "Optimizes solar, battery, and grid usage. Predicts load-shedding. Auto-sheds non-essential loads.",
+    brand: "Helios",
+    description: "Your solar, battery, and grid — optimized by AI. Predicts load-shedding. Sells power back at peak.",
     icon: "Sun",
     color: "from-amber-500 to-orange-600",
   },
   {
     name: "Security Guard",
+    brand: "Aegis",
     description: "Monitors cameras, gates, motion sensors. Alerts via WhatsApp. Escalates to armed response.",
     icon: "Shield",
     color: "from-cyan-500 to-blue-600",
   },
   {
     name: "Concierge",
+    brand: "Oberon",
     description: "Manages deliveries, guest access, schedules. Handles intercom, gate, and visitor management.",
     icon: "Bell",
     color: "from-purple-500 to-violet-600",
   },
   {
     name: "Climate Master",
-    description: "Learns your comfort patterns. Pre-conditions rooms before arrival. Manages HVAC, blinds, fans.",
+    brand: "Zephyr",
+    description: "Learns your comfort patterns. Pre-conditions rooms. Manages HVAC, blinds, fans, and more.",
     icon: "Thermometer",
     color: "from-emerald-500 to-teal-600",
   },
   {
     name: "Water Keeper",
-    description: "Monitors leaks, manages irrigation, tracks rainwater tanks. Alerts on water usage anomalies.",
+    brand: "Nereus",
+    description: "Monitors leaks, manages irrigation, tracks tanks. Alerts on usage anomalies.",
     icon: "Droplets",
     color: "from-sky-500 to-indigo-600",
   },
   {
     name: "Vehicle Integrator",
-    description: "Tesla Fleet API integration. Pre-conditions car. Manages charging. Garage automation via HomeLink.",
+    brand: "Transit",
+    description: "Tesla Fleet API — Powerwall, preconditioning, HomeLink. The car and the home speak the same language.",
     icon: "Car",
     color: "from-red-500 to-rose-600",
   },

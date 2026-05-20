@@ -33,39 +33,29 @@ export default function Home() {
         <Hero />
         <CosmicDivider />
         <Problem />
-        <CosmicDivider />
         <HowItWorks />
         <CosmicDivider />
         <HardwareShowcase />
-        <CosmicDivider />
         <AgentHub />
-        <CosmicDivider />
         <AIAgent />
         <CosmicDivider />
         <Features />
-        <CosmicDivider />
         <TeslaIntegration />
-        <CosmicDivider />
         <Marketplace />
         <CosmicDivider />
         <Architects />
-        <CosmicDivider />
         <Diaspora />
         <CosmicDivider />
         <Competition />
-        <CosmicDivider />
         <Market />
         <CosmicDivider />
         <Pricing />
-        <CosmicDivider />
         <OpenSource />
         <CosmicDivider />
         <Roadmap />
-        <CosmicDivider />
         <AlphaCommunity />
         <CosmicDivider />
         <Team />
-        <CosmicDivider />
         <Investors />
         <CosmicDivider />
         <CTA />

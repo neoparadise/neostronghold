@@ -1,4 +1,5 @@
 import { COMPANY, FOOTER_LINKS } from "@/lib/constants"
+import { Logo } from "@/components/ui/logo"
 
 export function Footer() {
   return (
@@ -7,11 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
             <a href="#hero" className="flex items-center gap-2.5 mb-4">
-              <img
-                src="/icon-192x192.png"
-                alt="neostronghold"
-                className="h-8 w-8 rounded-lg"
-              />
+              <Logo className="h-8 w-8 text-primary" />
               <span className="font-heading text-lg font-bold tracking-tight">
                 neostronghold
               </span>

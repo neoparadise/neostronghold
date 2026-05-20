@@ -76,9 +76,8 @@ export function AgentHub() {
                           <div className={`flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br ${agent.color}`}>
                             {Icon && <Icon size={14} className="text-white" />}
                           </div>
-                          <span className="text-sm font-semibold">
-                            {agent.name}
-                          </span>
+                          <span className="text-sm font-semibold">{agent.name}</span>
+                            <span className="text-[10px] text-primary/60 font-medium ml-1">/{agent.brand}</span>
                           <span className="ml-auto h-2 w-2 rounded-full bg-accent animate-glow-pulse" />
                         </div>
                         <p className="text-xs text-muted-foreground leading-relaxed">
