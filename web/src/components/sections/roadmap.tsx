@@ -33,9 +33,9 @@ export function Roadmap() {
         <div className="mb-10">
           <div className="relative flex items-center justify-between">
             {/* Connecting line behind dots */}
-            <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-0.5 bg-border/50">
+            <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-[3px] bg-border/30 rounded-full overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-primary to-secondary transition-all duration-700 ease-out"
+                className="h-full bg-gradient-to-r from-primary via-secondary to-accent rounded-full transition-all duration-700 ease-out shadow-[0_0_10px_hsl(var(--primary)/0.3)]"
                 style={{ width: `${(step / (total - 1)) * 100}%` }}
               />
             </div>
@@ -50,21 +50,38 @@ export function Roadmap() {
                   onClick={() => setStep(i)}
                   className="relative flex flex-col items-center gap-2 group"
                 >
-                  <div
-                    className={`relative z-10 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 transition-all duration-500 ${
-                      active
-                        ? "border-primary bg-primary/10 shadow-[0_0_20px_hsl(var(--primary)/0.3)] scale-110"
-                        : done
-                        ? "border-primary/40 bg-primary/5"
-                        : "border-border/40 bg-card"
-                    }`}
-                  >
-                    <Icon
-                      size={20}
-                      className={`transition-colors duration-500 ${
-                        active ? "text-primary" : done ? "text-primary/60" : "text-muted-foreground"
+                  <div className="relative z-10">
+                    {/* Glow ring behind active */}
+                    {active && (
+                      <div className="absolute inset-[-4px] rounded-full bg-gradient-to-r from-primary via-secondary to-accent opacity-30 blur-md animate-glow-pulse" />
+                    )}
+                    {/* Gradient border wrapper */}
+                    <div
+                      className={`flex items-center justify-center rounded-full transition-all duration-500 ${
+                        active
+                          ? "bg-gradient-to-r from-primary via-secondary to-accent p-[2px] shadow-[0_0_30px_hsl(var(--primary)/0.4)] scale-110"
+                          : done
+                          ? "bg-gradient-to-r from-primary/40 to-secondary/40 p-[2px]"
+                          : "bg-border/40 p-[2px]"
                       }`}
-                    />
+                    >
+                      <div
+                        className={`flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full transition-all duration-500 ${
+                          active
+                            ? "bg-background"
+                            : done
+                            ? "bg-card"
+                            : "bg-card"
+                        }`}
+                      >
+                        <Icon
+                          size={18}
+                          className={`transition-colors duration-500 ${
+                            active ? "text-primary" : done ? "text-primary/60" : "text-muted-foreground"
+                          }`}
+                        />
+                      </div>
+                    </div>
                   </div>
                   <span
                     className={`text-xs font-semibold whitespace-nowrap transition-colors duration-500 ${
